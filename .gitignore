@@ -1,0 +1,37 @@
+# Build output
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# Local config and secrets (commit application.properties.example instead)
+src/main/resources/application.properties
+.env
+*.env
+
+# Uploaded files
+fixdesk-uploads/
+uploads/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+nbproject/
+nbactions.xml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python (voice-agent)
+__pycache__/
+*.pyc
+.venv/
+venv/
