@@ -52,6 +52,17 @@ Set `LANGUAGE` in `.env`:
 
 Malay needs a model that supports it: `deepgram/nova-3` (listening) and `cartesia/sonic-3` or newer (speaking). `cartesia/sonic-2` is retired and has no Malay.
 
+## Latency
+
+Console mode prints each turn's timing (`end_of_turn`, `llm_ttft`, `tts_ttfb`, `e2e`). Two `.env` settings shorten it:
+
+- `PREEMPTIVE_GENERATION=true`: the reply is written and voiced while you are still finishing your sentence (LiveKit does the writing part by default; this adds the voice).
+- `MIN_ENDPOINTING_DELAY=0.3`: seconds of silence before your turn counts as finished. Raise it to `0.5` if the agent cuts in when you pause.
+
+Echo: console mode has no echo cancellation, so on laptop speakers the mic can hear the agent and log its words as `[user]` (for example `[user] Okay.`), cutting it off. Use headphones, or use `dev` with the Agents Playground (the browser cancels echo). `INTERRUPT_MIN_WORDS=2` stops one-word echoes from interrupting.
+
+A smaller local model does not help much on an integrated GPU: qwen3.5:9b, qwen2.5:7b and qwen3:8b all measured about the same time to first token.
+
 ## Notes
 
 - `.env` holds your LiveKit secret; it is git-ignored. Never commit it.
