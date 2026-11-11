@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+  <title>Something went wrong · FixDesk</title>
+</head>
+<body>
+<main>
+  <h1 class="h3">Something went wrong</h1>
+  <p>FixDesk could not finish that request. Please try again. If it keeps happening, tell the IT Support Unit.</p>
+  <a class="btn btn-primary" th:href="@{/}">Back to FixDesk</a>
+</main>
+</body>
+</html>

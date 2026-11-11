@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+  <title>Not found · FixDesk</title>
+</head>
+<body>
+<main>
+  <h1 class="h3">Page not found</h1>
+  <p>The page does not exist, or it is not available to you.</p>
+  <a class="btn btn-primary" th:href="@{/}">Back to FixDesk</a>
+</main>
+</body>
+</html>

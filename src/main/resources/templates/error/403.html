@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+  <title>Not allowed · FixDesk</title>
+</head>
+<body>
+<main>
+  <h1 class="h3">You cannot open this page</h1>
+  <p>Your account does not have access to it, or the form you sent has expired.</p>
+  <a class="btn btn-primary" th:href="@{/}">Back to FixDesk</a>
+</main>
+</body>
+</html>

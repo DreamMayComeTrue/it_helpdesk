@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+  <title th:text="${pageName} + ' · FixDesk'">FixDesk</title>
+</head>
+<body>
+<main>
+  <h1 class="h3" th:text="${pageName}">Page</h1>
+  <p class="text-body-secondary">This page is not built yet. It belongs to a module that is still in progress.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- CSRF hidden field. Put this inside every form with method="post":
+       <input th:replace="~{layout/fragments :: csrf}">                      -->
+<input th:fragment="csrf" type="hidden" name="_csrf" th:value="${session.csrfToken}">
+
+<!-- Flash messages set with RedirectAttributes.addFlashAttribute("success" | "error", "...") -->
+<div th:fragment="flash">
+  <div class="alert alert-success" role="status" th:if="${success != null}" th:text="${success}"></div>
+  <div class="alert alert-danger" role="alert" th:if="${error != null}" th:text="${error}"></div>
+</div>
+
+</body>
+</html>

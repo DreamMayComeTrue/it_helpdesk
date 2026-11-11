@@ -1,0 +1,26 @@
+/* FixDesk styles on top of the local Bootstrap copy. Keep this file small. */
+
+.fixdesk-sidebar {
+  min-height: calc(100vh - 56px);
+}
+
+.fixdesk-sidebar .nav-link {
+  color: var(--bs-body-color);
+  border-radius: 0.375rem;
+}
+
+.fixdesk-sidebar .nav-link:hover,
+.fixdesk-sidebar .nav-link:focus {
+  background-color: var(--bs-secondary-bg);
+}
+
+/* Login, register and other single-form pages */
+.fixdesk-narrow {
+  max-width: 26rem;
+}
+
+@media (max-width: 767.98px) {
+  .fixdesk-sidebar {
+    min-height: 0;
+  }
+}

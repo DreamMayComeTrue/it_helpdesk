@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+  <title>Log in · FixDesk</title>
+</head>
+<body>
+<main class="fixdesk-narrow mx-auto">
+  <h1 class="h3 mb-3">Log in</h1>
+
+  <div class="alert alert-danger" role="alert" th:if="${loginFailed}">
+    Email or password is incorrect, or there were too many attempts. Please try again later.
+  </div>
+
+  <form th:action="@{/login}" th:object="${form}" method="post" novalidate>
+    <input th:replace="~{layout/fragments :: csrf}">
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" th:field="*{email}"
+             th:errorclass="is-invalid" autocomplete="username" required autofocus>
+      <div class="invalid-feedback" th:errors="*{email}"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" name="password" class="form-control"
+             th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'"
+             autocomplete="current-password" required>
+      <div class="invalid-feedback" th:errors="*{password}"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Log in</button>
+  </form>
+
+  <p class="mt-3 mb-0">No account yet? <a th:href="@{/register}">Register</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- Fallback for any error status without its own page in templates/error/. -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: layout(~{::title}, ~{::main})}">
+<head>
+  <title>Request not completed · FixDesk</title>
+</head>
+<body>
+<main>
+  <h1 class="h3">That request could not be completed</h1>
+  <p>Please go back and try again.</p>
+  <a class="btn btn-primary" th:href="@{/}">Back to FixDesk</a>
+</main>
+</body>
+</html>
